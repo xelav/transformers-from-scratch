@@ -6,11 +6,11 @@ from torch.autograd import Variable
 
 class TransformerEmbedding(nn.Module):
 
-    def __init__(self, input_dim, seq_len, embed_dim, sin_embed=False):
+    def __init__(self, vocab_size, seq_len, embed_dim, sin_embed=False):
 
         super(TransformerEmbedding, self).__init__()
 
-        self.embed = nn.Embedding(num_embeddings=input_dim, embedding_dim=embed_dim)
+        self.embed = nn.Embedding(num_embeddings=vocab_size, embedding_dim=embed_dim)
         self.pos_embed = nn.Embedding(num_embeddings=seq_len, embedding_dim=embed_dim)
 
         self.sin_embed = sin_embed

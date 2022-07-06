@@ -36,7 +36,7 @@ class Transformer(nn.Module):
         x = self.decoder(x, tgt)
         x = self.decoder_norm(x)
 
-        x = output_linear(x)
+        x = self.output_linear(x)
 
         return F.softmax(x)
 
